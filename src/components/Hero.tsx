@@ -21,14 +21,14 @@ const Hero: React.FC<HeroProps> = ({ onStartAssessment, onLogin, onSignup, user 
       description: 'AI-powered recommendations based on your unique profile'
     },
     {
+      icon: Users,
+      title: 'Expert Mentors',
+      description: 'Connect with industry professionals for personalized guidance'
+    },
+    {
       icon: BookOpen,
       title: 'Learning Roadmaps',
       description: 'Step-by-step guidance with resources and timelines'
-    },
-    {
-      icon: Users,
-      title: 'Industry Insights',
-      description: 'Real-world data on salary, growth, and job market trends'
     }
   ];
 

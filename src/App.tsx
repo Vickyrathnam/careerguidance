@@ -7,10 +7,12 @@ import Assessment from './components/Assessment';
 import Results from './components/Results';
 import CareerRoadmap from './components/CareerRoadmap';
 import Resources from './components/Resources';
+import Mentors from './components/Mentors';
+import Contact from './components/Contact';
 import { AssessmentData, CareerMatch } from './types';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'login' | 'signup' | 'assessment' | 'results' | 'roadmap' | 'resources'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'login' | 'signup' | 'assessment' | 'results' | 'roadmap' | 'resources' | 'mentors' | 'contact'>('home');
   const [assessmentData, setAssessmentData] = useState<AssessmentData | null>(null);
   const [careerMatches, setCareerMatches] = useState<CareerMatch[]>([]);
   const [selectedCareer, setSelectedCareer] = useState<CareerMatch | null>(null);
@@ -85,6 +87,10 @@ function App() {
         );
       case 'resources':
         return <Resources onBack={() => setCurrentView('home')} />;
+      case 'mentors':
+        return <Mentors onBack={() => setCurrentView('home')} user={user} />;
+      case 'contact':
+        return <Contact onBack={() => setCurrentView('home')} user={user} />;
       default:
         return (
           <Hero

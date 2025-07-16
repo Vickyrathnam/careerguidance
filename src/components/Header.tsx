@@ -3,7 +3,7 @@ import { BookOpen, Home, MapPin, Target, TrendingUp, User, LogOut } from 'lucide
 
 interface HeaderProps {
   currentView: string;
-  onNavigate: (view: 'home' | 'login' | 'signup' | 'assessment' | 'results' | 'roadmap' | 'resources') => void;
+  onNavigate: (view: 'home' | 'login' | 'signup' | 'assessment' | 'results' | 'roadmap' | 'resources' | 'mentors' | 'contact') => void;
   hasAssessmentData: boolean;
   user: { name: string; email: string } | null;
   onLogin: () => void;
@@ -15,7 +15,9 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, hasAssessmentD
     { id: 'home', label: 'Home', icon: Home },
     { id: 'assessment', label: 'Assessment', icon: Target },
     { id: 'results', label: 'Results', icon: TrendingUp, disabled: !hasAssessmentData },
+    { id: 'mentors', label: 'Mentors', icon: User },
     { id: 'resources', label: 'Resources', icon: BookOpen },
+    { id: 'contact', label: 'Contact', icon: MapPin },
   ];
 
   return (
